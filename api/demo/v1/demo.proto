@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package demo.api.v1;
+
+option go_package = "demo.api.v1;v1";
+
+import "google/api/annotations.proto";
+import "validate/validate.proto";
+
+service DemoService {
+    rpc Create (DemoServiceCreateRequest) returns(DemoServiceCreateResponse) {
+        option (google.api.http) = {
+            post: "/v1/demo/create"
+            body: "*"
+        };
+    }
+}
+
+
+message DemoServiceCreateRequest {
+    int64 id = 1;
+}
+
+message DemoServiceCreateResponse {
+}
