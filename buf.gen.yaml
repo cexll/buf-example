@@ -27,3 +27,10 @@ plugins:
     out: api
     opt:
       - paths=source_relative
+  # Use ruby grpc
+  - plugin: buf.build/grpc/ruby
+    out: api
+    opt:
+      - paths=source_relative
+  - plugin: buf.build/protocolbuffers/ruby
+    out: api
